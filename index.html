@@ -1,0 +1,47 @@
+<!doctype>
+<html>
+  <head>
+    <title>Rock Paper Scissors Lizard Spock</title>
+    <link href='style.css' rel='stylesheet'>
+  </head>
+  <body>
+    <h1>Rock Paper Scissors Lizard Spock</h1>
+    <section class='choices'>
+      <img src="images/rock.jpg" data-pick='rock'>
+      <img src="images/paper.jpg" data-pick='paper'>
+      <img src="images/scissors.jpg" data-pick='scissors'>
+      <img src="images/lizard.jpg" data-pick='lizard'>
+      <img src="images/spock.jpg" data-pick='spock'>
+    </section>
+
+    <ul id='results'>
+      
+    </ul>
+
+    <script src='javascript/lib/Player.js'></script>
+    <script src='javascript/lib/Game.js'></script>
+    <script src='javascript/lib/jquery-2.1.1.min.js'></script>
+    <script> 
+    $(document).ready(function(){
+              
+      var p1 = new Player('Nikesh');
+      var p2 = new Player('Sonu');
+      var game = new Game(p1, p2);
+
+      $('.choices img').on('click', function(){
+
+        p1.picks($(this).data('pick'));
+        p2.picks(game.randomPick());
+
+        $('<li>' + game.winningMessage() + '</li>' ).prependTo('#results').slideDown();
+
+        $("#results li:gt(2)").fadeOut(function(){
+            $(this).remove();
+        })
+      });
+    });
+  
+  </script>
+
+  </body>
+</html>
