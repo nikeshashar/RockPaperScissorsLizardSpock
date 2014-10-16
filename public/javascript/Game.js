@@ -53,3 +53,4 @@ var availablePicks = ["scissors", "rock", "paper", "lizard", "spock"]
 Game.prototype.randomPick = function() {
   return availablePicks[Math.floor(Math.random() * availablePicks.length)];
 };
+
