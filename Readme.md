@@ -15,14 +15,14 @@
   
 ### How to set it up
 ```sh
-git clone git@github.com:nikeshashar/GithubAPI.git
-cd GithubAPI
+git clone git@github.com:nikeshashar/RockPaperScissorsLizardSpock.git
+cd RockPaperScissorsLizardSpock
 bundle
 ```
 
 ### How to run it
 ```sh
-cd GithubAPI
+cd RockPaperScissorsLizardSpock
 rackup
 ```
 
